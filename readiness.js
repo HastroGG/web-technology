@@ -1,1 +1,1 @@
-console.log("✓ JavaScript hazır");
+console.log("Hello World(\"print\")");
