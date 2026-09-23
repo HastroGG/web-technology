@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <h1>Kampüs Etkinlikleri</h1>
+    <a href="index.html">Ana Sayfa</a>
+    <a href="etkinlikler.html">Etkinlikler</a>
+    <a href="etkinlik-ekle.html">Etkinlik Ekle</a>
+    <a href="etkinlik-guncelle.html">Etkinlik Güncelle</a>
+</head>
+<h3>Etkinlik Güncelle</h3>
+
+<body>
+    <form action="index.html" method="post">
+        <label for="etkinlik">Etkinlik Adı:</label><br>
+        <input type="text" id="etkinlik" name="etkinlik"><br>
+        <label for="kategori">Kategori:</label><br>
+        <select id="kategori" name="kategori">
+            <option value="seminer">Seminer</option>
+            <option value="atolye">Atölye</option>
+        </select><br><br>
+        <label for="tarih">Tarih:</label><br>
+        <input type="date" id="tarih" name="tarih"><br>
+        <label for="aciklama">Açıklama:</label><br>
+        <input type="text" id="aciklama" name="aciklama"><br><br>
+        <input type="submit" value="Ekle">
+
+    </form>
+</body>
+
+</html>
