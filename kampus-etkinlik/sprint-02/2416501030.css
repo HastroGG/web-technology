@@ -22,12 +22,8 @@ body {
   padding: 20px;
 }
 
-/* ==========================================
-   1. MASAÜSTÜ / GENİŞ EKRAN STİLLERİ (Varsayılan)
-   ========================================== */
-
 header, main, footer {
-  max-width: 900px; /* Geniş ekranda daha ferah alan */
+  max-width: 900px; 
   margin: 0 auto;
 }
 
@@ -68,7 +64,6 @@ nav span.ayrac {
   color: rgba(255, 255, 255, 0.7);
 }
 
-/* Masaüstünde Kartlar Yan Yana (Grid) */
 .etkinlik-grid, .etkinlik-listesi {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -97,7 +92,6 @@ nav span.ayrac {
   color: #555;
 }
 
-/* Form Elemanları */
 .form-group {
   margin-bottom: 14px;
 }
@@ -157,20 +151,15 @@ input.hata {
   font-size: 1.2rem;
 }
 
-/* ==========================================
-   2. MOBİL EKRAN STİLLERİ (Slayttaki Telefon Tasarımı)
-   ========================================== */
 @media screen and (max-width: 600px) {
   body {
     padding: 10px;
   }
 
-  /* Kapsayıcıyı slayttaki telefon genişliğine daraltır */
   header, main, footer {
     max-width: 380px;
   }
 
-  /* Yeşil header mobil görünümü */
   header {
     flex-direction: column;
     align-items: flex-start;
@@ -189,18 +178,17 @@ input.hata {
     font-size: 0.9rem;
   }
 
-  /* Mobilde Kartlar Alt Alta Tek Sütun Olur */
   .etkinlik-grid, .etkinlik-listesi {
     grid-template-columns: 1fr;
     gap: 10px;
   }
   .etkinlik-resmi {
-  max-width: 100%;       /* Kapsayıcı kartın dışına taşmasını engeller */
-  width: 100%;           /* Kapsayıcısını dolduracak şekilde esner */
-  height: auto;          /* Resmi oranlarını bozmadan ölçeklendirir */
-  display: block;        /* Altındaki boşlukları giderir */
-  margin: 0 auto;        /* Resimi kart içinde ortalar */
-  border-radius: var(--kose); /* Köşe yuvarlatmasını korur */
+  max-width: 100%;      
+  width: 100%;          
+  height: auto;         
+  display: block;       
+  margin: 0 auto;        
+  border-radius: var(--kose); 
 }
 
   .etkinlik-karti,
@@ -217,6 +205,6 @@ input.hata {
   }
 
   .btn {
-    width: 100%; /* Mobilde buton tüm genişliği kaplar */
+    width: 100%;
   }
 }
