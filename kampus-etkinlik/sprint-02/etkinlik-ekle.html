@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kampüs Etkinlikleri - Etkinlik Ekle</title>
+    <link href="../sprint-02/2416501030.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>Kampüs Etkinlikleri</h1>
+        <nav>
+            <a href="index.html">Ana Sayfa</a>
+            <a href="etkinlikler.html">Etkinlikler</a>
+            <a href="etkinlik-ekle.html">Etkinlik Ekle</a>
+            <a href="etkinlik-guncelle.html">Etkinlik Güncelle</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="form-section">
+            <h2>Etkinlik Ekle</h2>
+            <form action="index.html" method="post">
+                <div class="form-group">
+                    <label for="etkinlik">Etkinlik Adı:</label>
+                    <input type="text" id="etkinlik" name="etkinlik">
+                </div>
+
+                <div class="form-group">
+                    <label for="kategori">Kategori:</label>
+                    <select id="kategori" name="kategori">
+                        <option value="seminer">Seminer</option>
+                        <option value="atolye">Atölye</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="tarih">Tarih:</label>
+                    <input type="date" id="tarih" name="tarih">
+                </div>
+
+                <div class="form-group">
+                    <label for="aciklama">Açıklama:</label>
+                    <input type="text" id="aciklama" name="aciklama">
+                </div>
+
+                <button type="submit" class="btn">Ekle</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>Ramazan Harun Ergene - 2416501030 - <time datetime="2026-10-12">12 Ekim 2026</time></p>
+    </footer>
+</body>
+
+</html>
