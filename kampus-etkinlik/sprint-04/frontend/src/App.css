@@ -5,7 +5,7 @@
 
 :root {
   --no: 2416501030;
-  --ton: mod(var(--no), 360);
+  --ton: 310; /* mod(var(--no), 360) yerine doğrudan hesaplanmış sabit değer */
   --renk-ana: hsl(var(--ton) 65% 38%);
   --renk-ana-hover: hsl(var(--ton) 65% 30%);
   --renk-zemin: hsl(var(--ton) 30% 97%);
