@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function ForgotPasswordPage() {
@@ -16,6 +16,9 @@ export default function ForgotPasswordPage() {
             setSent(true);
         }
     }
+    useEffect(() => {
+            document.title = "Şifremi Unuttum - Kampüs Etkinlikleri";
+        }, []);
 
     return (
         <div style={{ maxWidth: '400px', margin: '40px auto', padding: '20px' }}>

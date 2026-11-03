@@ -1,10 +1,16 @@
 import { Link } from 'react-router-dom';
 import { useEvents } from '../context/EventsContext';
+import { useEffect } from "react";
 
 export default function AdminPage() {
     const { events, deleteEvent } = useEvents();
 
+    useEffect(() => {
+        document.title = "Yönetim - Kampüs Etkinlikleri";
+    }, []);
+
     return (
+        
         <section style={{ padding: '20px' }}>
             <h2>Etkinlik Yönetimi</h2>
             <Link to="/admin/new" className="btn" style={{ display: 'block', textAlign: 'center', textDecoration: 'none' }}>

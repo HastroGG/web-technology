@@ -1,6 +1,10 @@
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function NotFoundPage() {
+    useEffect(() => {
+            document.title = "Sayfa Bulunamadı - Kampüs Etkinlikleri";
+        }, []);
     return (
         <section style={{ textAlign: 'center', padding: '50px' }}>
             <h2>Sayfa bulunamadı.</h2>

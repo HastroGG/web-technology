@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useEvents } from '../context/EventsContext';
 import EventCard from '../components/events/EventCard';
@@ -6,7 +6,9 @@ import EventCard from '../components/events/EventCard';
 export default function HomePage() {
     const { events } = useEvents();
     const featuredEvents = events.slice(0, 3); // İlk 3 etkinlik öne çıkanlar
-
+    useEffect(() => {
+        document.title = "Ana Sayfa - Kampüs Etkinlikleri";
+    }, []);
     return (
         <div>
             <section style={{ marginBottom: '30px', textAlign: 'center' }}>

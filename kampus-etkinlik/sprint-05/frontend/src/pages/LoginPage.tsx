@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function LoginPage() {
@@ -6,6 +6,9 @@ export default function LoginPage() {
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState<{ email?: string; password?: string }>({});
     const [sent, setSent] = useState(false);
+    useEffect(() => {
+            document.title = "Giriş Yap - Kampüs Etkinlikleri";
+        }, []);
 
     function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
