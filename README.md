@@ -1,55 +1,70 @@
-# Kampüs Etkinlikleri
+# Kampüs Etkinlikleri (React & TypeScript)
 
-Kampüs etkinliklerinin listelenmesini ve etkinlik bilgilerine erişilmesini sağlayan, HTML ile hazırlanmış statik web arayüzü projesidir. Proje, web teknolojileri dersi kapsamında `sprint-01` çalışması olarak geliştirilmiştir.
+Üniversite içerisindeki akademik, kültürel ve sosyal etkinliklerin takip edilmesini, filtrelenmesini ve yönetilmesini sağlayan modern bir **React** ve **TypeScript** web uygulamasıdır. Proje, Vite ve React Router altyapısıyla geliştirilmiştir.
+
+## 🚀 Canlı Önizleme (Vercel)
+* **Canlı Vercel Adresi:** https://ramazanharunergene-frontend.vercel.app/
 
 ## Özellikler
 
-- Yaklaşan etkinlikleri ana sayfada görüntüleme
-- Tüm etkinlikleri tablo halinde listeleme
-- Etkinlik detaylarını görüntüleme
-- Yeni etkinlik eklemek için form sunma
-- Etkinlik bilgilerini güncellemek için form sunma
+- **10 Rota Mimarisi:** Ana sayfa, etkinlik listesi, etkinlik detayları, kullanıcı giriş/kayıt sayfaları ve yönetim paneli arasında sorunsuz geçiş.
+- **Dinamik Etkinlik Yönetimi:** Context API (`EventsContext`) kullanılarak etkinlik ekleme, güncelleme ve silme işlemleri.
+- **Gelişmiş Filtreleme:** Etkinlikleri kategoriye ve anahtar kelimeye göre anlık filtreleme.
+- **Responsive Tasarım ve Tema:** Özel CSS değişkenleri (`--renk-ana`) ve merkezi `App.css` ile tam renk uyumu.
+- **Form Validasyonları:** Kullanıcı dostu hata yönetimli giriş, kayıt ve etkinlik formları.
 
 ## Proje Yapısı
 
 ```text
-kampus-etkinlik/
-└── sprint-01/
-	├── index.html                 # Ana sayfa
-	├── etkinlikler.html            # Etkinlik listesi
-	├── etkinlik-detay.html        # Etkinlik detay sayfası
-	├── etkinlik-ekle.html          # Etkinlik ekleme formu
-	└── etkinlik-guncelle.html      # Etkinlik güncelleme formu
+kampus-etkinlik-react/
+├── public/                 # Statik görseller (event1.png, vb.)
+├── src/
+│   ├── components/         # Yeniden kullanılabilir bileşenler (Events, Forms vb.)
+│   ├── context/            # Global state yönetimi (EventsContext)
+│   ├── pages/              # Sayfa bileşenleri (Home, Events, Admin, Login vb.)
+│   ├── types/              # TypeScript tip tanımlamaları
+│   ├── App.tsx             # Ana uygulama ve router yönlendirmeleri
+│   └── App.css             # Merkezi stil ve tema dosyası
 ```
 
 ## Kullanılan Teknolojiler
 
-- HTML5
-- Standart HTML formları, tabloları ve bağlantıları
-- Harici kütüphane veya sunucu tarafı uygulama kullanılmamıştır.
+- **React 18** & **TypeScript**
+- **Vite** (Hızlı derleme ve geliştirme ortamı)
+- **React Router DOM** (İstemci tarafı sayfa yönlendirmesi)
+- **CSS3** (Özel değişkenler ve modern flexbox/grid layout yapıları)
 
-## Çalıştırma
+## ⚙️ Kurulum ve Çalıştırma
 
-1. Proje klasörünü bilgisayarınıza indirin veya klonlayın.
-2. `kampus-etkinlik/sprint-01/index.html` dosyasını bir web tarayıcısında açın.
-3. Menüdeki bağlantıları kullanarak diğer sayfalara geçin.
+Projeyi yerel ortamınızda çalıştırmak için terminal üzerinde aşağıdaki adımları sırasıyla uygulayabilirsiniz:
 
-İsteğe bağlı olarak klasör, VS Code içindeki **Live Server** gibi bir eklentiyle de çalıştırılabilir.
+1. Projeyi bilgisayarınıza klonlayın veya indirin.
+2. Proje dizininde bağımlılıkları yükleyin:
+   ```bash
+   npm install
+   ```
+3. Geliştirme sunucusunu başlatın:
+   ```bash
+   npm run dev
+   ```
+4. Tarayıcınızda `http://localhost:5173` adresine giderek uygulamayı görüntüleyin.
 
-## Sayfalar
+## 🗺️ Route Listesi
 
-| Sayfa | Açıklama |
-| --- | --- |
-| `index.html` | Yaklaşan etkinlikleri gösterir. |
-| `etkinlikler.html` | Etkinlikleri tablo halinde listeler. |
-| `etkinlik-detay.html` | Seçilen etkinliğin tarih, yer ve kontenjan bilgilerini gösterir. |
-| `etkinlik-ekle.html` | Etkinlik adı, kategori, tarih ve açıklama alanlarını içeren ekleme formudur. |
-| `etkinlik-guncelle.html` | Etkinlik bilgilerini güncellemek için kullanılan formdur. |
+Uygulama içerisinde tanımlı olan 10 rota yapısı:
 
-## Örnek Etkinlikler
-
-- **Kariyer Günleri 2026** — Seminer, 12 Ekim, A Blok
-- **Robotik Atölyesi** — Atölye, 18 Ekim, Lab 3
+| Rota (Path) | Sayfa / Bileşen | Açıklama |
+| --- | --- | --- |
+| `/` | `HomePage` | Öne çıkan etkinlikleri ve karşılama alanını gösterir. |
+| `/events` | `EventsPage` | Tüm kampüs etkinliklerini listeler, arama ve kategori filtresi sunar. |
+| `/events/:id` | `EventDetailPage` | Seçilen etkinliğin detaylarını, konumunu ve kontenjanını gösterir. |
+| `/login` | `LoginPage` | Kullanıcı giriş yapma ekranı. |
+| `/register` | `RegisterPage` | Yeni kullanıcı kayıt olma ekranı. |
+| `/forgot-password` | `ForgotPasswordPage` | Şifre yenileme talep sayfası. |
+| `/admin` | `AdminPage` | Etkinliklerin yönetildiği, silme ve düzenleme paneli. |
+| `/admin/new` | `AddEventPage` | Yeni etkinlik ekleme formu. |
+| `/admin/:id/edit` | `EditEventPage` | Mevcut etkinlik bilgilerini güncelleme formu. |
+| `*` | `NotFoundPage` | Eşleşmeyen rotalar için 404 hata sayfası. |
 
 ## Geliştirici
 
