@@ -17,7 +17,7 @@ export const events = [
     date: "2026-10-15",
     time: "10:30",
     location: "Laboratuvar B-2",
-    description: "Büyük dil modellerii ve uygulama geliştirme üzerine pratik çalışma.",
+    description: "Büyük dil modelleri ve uygulama geliştirme üzerine pratik çalışma.",
   },
   {
     id: "event-3",
